@@ -1,2 +1,2 @@
 # RocketHelp
-Aplicativo desenvolvido em iOS 
+Aplicativo desenvolvido em iOS - (em construção) 
