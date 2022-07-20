@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B18D1E982887780E008D08AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E972887780E008D08AD /* AppDelegate.swift */; };
 		B18D1E9A2887780E008D08AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E992887780E008D08AD /* SceneDelegate.swift */; };
-		B18D1E9C2887780E008D08AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E9B2887780E008D08AD /* ViewController.swift */; };
+		B18D1E9C2887780E008D08AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E9B2887780E008D08AD /* LoginViewController.swift */; };
 		B18D1EA12887780E008D08AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18D1EA02887780E008D08AD /* Assets.xcassets */; };
 		B18D1EA42887780E008D08AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18D1EA22887780E008D08AD /* LaunchScreen.storyboard */; };
 		B18D1EAF2887780E008D08AD /* RocketHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1EAE2887780E008D08AD /* RocketHelpTests.swift */; };
@@ -38,7 +38,7 @@
 		B18D1E942887780E008D08AD /* RocketHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18D1E972887780E008D08AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18D1E992887780E008D08AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B18D1E9B2887780E008D08AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B18D1E9B2887780E008D08AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B18D1EA02887780E008D08AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18D1EA32887780E008D08AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B18D1EA52887780E008D08AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,11 +97,8 @@
 		B18D1E962887780E008D08AD /* RocketHelp */ = {
 			isa = PBXGroup;
 			children = (
-				B18D1E972887780E008D08AD /* AppDelegate.swift */,
-				B18D1E992887780E008D08AD /* SceneDelegate.swift */,
-				B18D1E9B2887780E008D08AD /* ViewController.swift */,
-				B18D1EA02887780E008D08AD /* Assets.xcassets */,
-				B18D1EA22887780E008D08AD /* LaunchScreen.storyboard */,
+				B18D1EC728877B2D008D08AD /* Resources */,
+				B18D1EC828877B52008D08AD /* View */,
 				B18D1EA52887780E008D08AD /* Info.plist */,
 			);
 			path = RocketHelp;
@@ -122,6 +119,25 @@
 				B18D1EBA2887780E008D08AD /* RocketHelpUITestsLaunchTests.swift */,
 			);
 			path = RocketHelpUITests;
+			sourceTree = "<group>";
+		};
+		B18D1EC728877B2D008D08AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B18D1EA02887780E008D08AD /* Assets.xcassets */,
+				B18D1EA22887780E008D08AD /* LaunchScreen.storyboard */,
+				B18D1E972887780E008D08AD /* AppDelegate.swift */,
+				B18D1E992887780E008D08AD /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B18D1EC828877B52008D08AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B18D1E9B2887780E008D08AD /* LoginViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18D1E9C2887780E008D08AD /* ViewController.swift in Sources */,
+				B18D1E9C2887780E008D08AD /* LoginViewController.swift in Sources */,
 				B18D1E982887780E008D08AD /* AppDelegate.swift in Sources */,
 				B18D1E9A2887780E008D08AD /* SceneDelegate.swift in Sources */,
 			);
