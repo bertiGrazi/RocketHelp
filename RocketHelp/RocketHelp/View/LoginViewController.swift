@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     
     //MARK: - View
     fileprivate let logoRocketHelpImageView: UIImageView = {
@@ -28,6 +29,13 @@ class LoginViewController: UIViewController {
         return label
     }()
     
+    fileprivate let iconEmail: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "envelope")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     fileprivate let emailTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(
@@ -42,6 +50,13 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
+    }()
+    
+    fileprivate let iconPassword: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+        imageView.image = UIImage(systemName: "person.badge.key")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     fileprivate let passwordTextField: UITextField = {
@@ -63,6 +78,7 @@ class LoginViewController: UIViewController {
     fileprivate let logInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Entrar", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.backgroundColor = UIColor(red: 0, green: 0.52, blue: 0.37, alpha: 1)
         button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 6
@@ -74,8 +90,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
         
+        emailTextField.setLeftIcon(iconEmail)
+        passwordTextField.setLeftIcon(iconPassword)
+        
         setupView()
         setupConstrains()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
     }
     
     fileprivate func setupView() {
@@ -113,3 +136,19 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension UITextField {
+ func setLeftIcon(_ icon: UIImageView) {
+    let padding = 10
+    let size = 18
+
+    let outerView = UIView(frame: CGRect(x: 0, y: 0, width: size + padding, height: size))
+    let iconView  = UIImageView(frame: CGRect(x: padding, y: 0, width: size, height: size))
+    iconView.image = icon.image
+    outerView.addSubview(iconView)
+     
+    iconView.tintColor = UIColor(red: 0.48, green: 0.48, blue: 0.54, alpha: 1)
+     
+    leftView = outerView
+    leftViewMode = .unlessEditing
+  }
+}
