@@ -51,6 +51,36 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    fileprivate let buttonsView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    fileprivate let inProgressButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("EM ANDAMENTO", for: .normal)
+        button.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
+        button.setTitleColor(UIColor(red: 0.98, green: 0.66, blue: 0.29, alpha: 1), for: .normal)
+        button.layer.cornerRadius = 4
+        button.layer.borderColor = CGColor(red: 0.98, green: 0.66, blue: 0.29, alpha: 1)
+        button.layer.borderWidth = 1
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    fileprivate let finalizedButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("FINALIZADOS", for: .normal)
+        button.setTitleColor(UIColor(red: 0.01, green: 0.82, blue: 0.38, alpha: 1), for: .normal)
+        button.layer.cornerRadius = 4
+        button.layer.borderColor = CGColor(red: 0.01, green: 0.82, blue: 0.38, alpha: 1)
+        button.layer.borderWidth = 1
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
@@ -71,6 +101,9 @@ class HomeViewController: UIViewController {
         logoView.addSubview(signOutButton)
         view.addSubview(requestsLabel)
         view.addSubview(requestsValueLabel)
+        view.addSubview(buttonsView)
+        buttonsView.addSubview(inProgressButton)
+        buttonsView.addSubview(finalizedButton)
     }
     
     fileprivate func setupConstrains() {
@@ -91,6 +124,22 @@ class HomeViewController: UIViewController {
             
             requestsValueLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
             requestsValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            buttonsView.topAnchor.constraint(equalTo: requestsValueLabel.bottomAnchor, constant: 12),
+            buttonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            buttonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            buttonsView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            buttonsView.heightAnchor.constraint(equalToConstant: 50),
+            
+            inProgressButton.topAnchor.constraint(equalTo: buttonsView.topAnchor, constant: 10),
+            inProgressButton.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor, constant: 20),
+            inProgressButton.widthAnchor.constraint(equalToConstant: 170),
+            inProgressButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            finalizedButton.topAnchor.constraint(equalTo: buttonsView.topAnchor, constant: 10),
+            finalizedButton.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor, constant: -20),
+            finalizedButton.widthAnchor.constraint(equalToConstant: 170),
+            finalizedButton.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
