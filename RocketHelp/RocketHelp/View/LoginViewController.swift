@@ -8,8 +8,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-    
     //MARK: - View
     fileprivate let logoRocketHelpImageView: UIImageView = {
         let imageView = UIImageView()
