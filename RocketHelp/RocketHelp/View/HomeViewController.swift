@@ -31,6 +31,26 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    fileprivate let requestsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Solicitações"
+        label.textColor = UIColor(red: 0.88, green: 0.88, blue: 0.90, alpha: 1)
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    fileprivate let requestsValueLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = UIColor(red: 0.88, green: 0.88, blue: 0.90, alpha: 1)
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
@@ -49,6 +69,8 @@ class HomeViewController: UIViewController {
         view.addSubview(logoView)
         logoView.addSubview(logoRocketHelpImageView)
         logoView.addSubview(signOutButton)
+        view.addSubview(requestsLabel)
+        view.addSubview(requestsValueLabel)
     }
     
     fileprivate func setupConstrains() {
@@ -63,6 +85,12 @@ class HomeViewController: UIViewController {
             
             signOutButton.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: -50),
             signOutButton.trailingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: -20),
+            
+            requestsLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
+            requestsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            requestsValueLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
+            requestsValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
     
