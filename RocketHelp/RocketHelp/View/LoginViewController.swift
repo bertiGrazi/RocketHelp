@@ -93,6 +93,8 @@ class LoginViewController: UIViewController {
         emailTextField.setLeftIcon(iconEmail)
         passwordTextField.setLeftIcon(iconPassword)
         
+        logInButton.addTarget(self, action: #selector(goToHomeScream), for: .touchUpInside)
+        
         setupView()
         setupConstrains()
     }
@@ -133,6 +135,15 @@ class LoginViewController: UIViewController {
             logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             logInButton.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+    
+    @objc
+    func goToHomeScream() {
+       let homeScream = HomeViewController()
+    
+       let navVC = UINavigationController(rootViewController: homeScream)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true)
     }
 }
 
