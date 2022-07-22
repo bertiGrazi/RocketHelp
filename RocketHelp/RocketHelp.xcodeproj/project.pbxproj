@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B137856C288A0F4200DAF856 /* NoCallsCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137856B288A0F4200DAF856 /* NoCallsCreatedView.swift */; };
 		B18D1E982887780E008D08AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E972887780E008D08AD /* AppDelegate.swift */; };
 		B18D1E9A2887780E008D08AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E992887780E008D08AD /* SceneDelegate.swift */; };
 		B18D1E9C2887780E008D08AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E9B2887780E008D08AD /* LoginViewController.swift */; };
@@ -15,6 +16,7 @@
 		B18D1EAF2887780E008D08AD /* RocketHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1EAE2887780E008D08AD /* RocketHelpTests.swift */; };
 		B18D1EB92887780E008D08AD /* RocketHelpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1EB82887780E008D08AD /* RocketHelpUITests.swift */; };
 		B18D1EBB2887780E008D08AD /* RocketHelpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1EBA2887780E008D08AD /* RocketHelpUITestsLaunchTests.swift */; };
+		B18F40532888CC2E00D859D9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18F40522888CC2E00D859D9 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B137856B288A0F4200DAF856 /* NoCallsCreatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCallsCreatedView.swift; sourceTree = "<group>"; };
 		B18D1E942887780E008D08AD /* RocketHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18D1E972887780E008D08AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18D1E992887780E008D08AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		B18D1EB42887780E008D08AD /* RocketHelpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketHelpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18D1EB82887780E008D08AD /* RocketHelpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketHelpUITests.swift; sourceTree = "<group>"; };
 		B18D1EBA2887780E008D08AD /* RocketHelpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketHelpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B18F40522888CC2E00D859D9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				B18D1E9B2887780E008D08AD /* LoginViewController.swift */,
+				B18F40522888CC2E00D859D9 /* HomeViewController.swift */,
+				B137856B288A0F4200DAF856 /* NoCallsCreatedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B137856C288A0F4200DAF856 /* NoCallsCreatedView.swift in Sources */,
 				B18D1E9C2887780E008D08AD /* LoginViewController.swift in Sources */,
 				B18D1E982887780E008D08AD /* AppDelegate.swift in Sources */,
 				B18D1E9A2887780E008D08AD /* SceneDelegate.swift in Sources */,
+				B18F40532888CC2E00D859D9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

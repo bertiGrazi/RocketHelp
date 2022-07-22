@@ -8,8 +8,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-    
     //MARK: - View
     fileprivate let logoRocketHelpImageView: UIImageView = {
         let imageView = UIImageView()
@@ -93,6 +91,8 @@ class LoginViewController: UIViewController {
         emailTextField.setLeftIcon(iconEmail)
         passwordTextField.setLeftIcon(iconPassword)
         
+        logInButton.addTarget(self, action: #selector(goToHomeScream), for: .touchUpInside)
+        
         setupView()
         setupConstrains()
     }
@@ -133,6 +133,16 @@ class LoginViewController: UIViewController {
             logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             logInButton.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+    
+    @objc
+    func goToHomeScream() {
+       let homeScream = HomeViewController()
+    
+       let navVC = UINavigationController(rootViewController: homeScream)
+        navVC.navigationBar.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true)
     }
 }
 
