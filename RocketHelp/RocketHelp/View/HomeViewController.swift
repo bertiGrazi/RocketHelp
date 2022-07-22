@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     fileprivate let scrollView: UIScrollView = {
       let scrollView = UIScrollView()
         scrollView.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
+        scrollView.isScrollEnabled = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
       return scrollView
     }()
@@ -104,6 +105,16 @@ class HomeViewController: UIViewController {
         return stackView
     }()
     
+    fileprivate let newRequestButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Nova solicitação", for: .normal)
+        button.backgroundColor = UIColor(red: 0, green: 0.52, blue: 0.37, alpha: 1)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.layer.cornerRadius = 6
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
@@ -131,6 +142,7 @@ class HomeViewController: UIViewController {
         buttonsView.addSubview(finalizedButton)
         viewContainerBody.addSubview(stackView)
         stackView.addArrangedSubview(noCallsCreatedView)
+        viewContainerBody.addSubview(newRequestButton)
     }
     
     fileprivate func setupConstrains() {
@@ -156,7 +168,7 @@ class HomeViewController: UIViewController {
             viewContainerBody.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
             viewContainerBody.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
             viewContainerBody.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
-            viewContainerBody.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height),
+            viewContainerBody.heightAnchor.constraint(equalToConstant: 700),
             
             requestsLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
             requestsLabel.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 20),
@@ -183,7 +195,12 @@ class HomeViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: buttonsView.bottomAnchor, constant: 0),
             stackView.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 0),
             stackView.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: 0),
-            stackView.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: 0),
+            
+            newRequestButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 0),
+            newRequestButton.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 20),
+            newRequestButton.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: -20),
+            newRequestButton.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: -80),
+            newRequestButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
