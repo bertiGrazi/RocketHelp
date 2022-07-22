@@ -8,7 +8,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    let noCallsCreatedView = NoCallsCreatedView()
+    
     //MARK: - View
+    fileprivate let scrollView: UIScrollView = {
+      let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+      return scrollView
+    }()
+    
     fileprivate let logoView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
@@ -29,6 +38,13 @@ class HomeViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "sign-out"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+    
+    fileprivate let viewContainerBody: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     fileprivate let requestsLabel: UILabel = {
@@ -96,22 +112,29 @@ class HomeViewController: UIViewController {
     }
     
     fileprivate func setupView() {
-        view.addSubview(logoView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(logoView)
         logoView.addSubview(logoRocketHelpImageView)
         logoView.addSubview(signOutButton)
-        view.addSubview(requestsLabel)
-        view.addSubview(requestsValueLabel)
-        view.addSubview(buttonsView)
+        scrollView.addSubview(viewContainerBody)
+        viewContainerBody.addSubview(requestsLabel)
+        viewContainerBody.addSubview(requestsValueLabel)
+        viewContainerBody.addSubview(buttonsView)
         buttonsView.addSubview(inProgressButton)
         buttonsView.addSubview(finalizedButton)
     }
     
     fileprivate func setupConstrains() {
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            logoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            logoView.heightAnchor.constraint(equalToConstant: 138),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            
+            logoView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
+            logoView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
+            logoView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+            logoView.heightAnchor.constraint(equalToConstant: 100),
             
             logoRocketHelpImageView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: -50),
             logoRocketHelpImageView.leadingAnchor.constraint(equalTo: logoView.leadingAnchor, constant: 20),
@@ -119,15 +142,22 @@ class HomeViewController: UIViewController {
             signOutButton.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: -50),
             signOutButton.trailingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: -20),
             
+            viewContainerBody.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 0),
+            viewContainerBody.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
+            viewContainerBody.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+            viewContainerBody.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
+            viewContainerBody.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            viewContainerBody.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height),
+            
             requestsLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
-            requestsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            requestsLabel.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 20),
             
             requestsValueLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
-            requestsValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            requestsValueLabel.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: -20),
             
             buttonsView.topAnchor.constraint(equalTo: requestsValueLabel.bottomAnchor, constant: 12),
-            buttonsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            buttonsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            buttonsView.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 0),
+            buttonsView.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: 0),
             buttonsView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             buttonsView.heightAnchor.constraint(equalToConstant: 50),
             

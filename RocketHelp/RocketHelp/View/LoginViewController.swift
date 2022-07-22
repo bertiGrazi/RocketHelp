@@ -140,6 +140,7 @@ class LoginViewController: UIViewController {
        let homeScream = HomeViewController()
     
        let navVC = UINavigationController(rootViewController: homeScream)
+        navVC.navigationBar.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)
     }
