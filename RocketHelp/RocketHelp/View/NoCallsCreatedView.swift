@@ -58,8 +58,8 @@ class NoCallsCreatedView: UIView {
             viewNoCallsCreated.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             viewNoCallsCreated.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             viewNoCallsCreated.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            viewNoCallsCreated.widthAnchor.constraint(equalToConstant: 300),
-            viewNoCallsCreated.heightAnchor.constraint(equalToConstant: 300),
+//            viewNoCallsCreated.widthAnchor.constraint(equalToConstant: 300),
+//            viewNoCallsCreated.heightAnchor.constraint(equalToConstant: 300),
             
             noCallsCreatedIcon.centerXAnchor.constraint(equalTo: viewNoCallsCreated.centerXAnchor, constant: 0),
             noCallsCreatedIcon.topAnchor.constraint(equalTo: viewNoCallsCreated.topAnchor, constant: 36),
