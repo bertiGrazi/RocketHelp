@@ -97,6 +97,13 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    fileprivate let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
@@ -122,6 +129,8 @@ class HomeViewController: UIViewController {
         viewContainerBody.addSubview(buttonsView)
         buttonsView.addSubview(inProgressButton)
         buttonsView.addSubview(finalizedButton)
+        viewContainerBody.addSubview(stackView)
+        stackView.addArrangedSubview(noCallsCreatedView)
     }
     
     fileprivate func setupConstrains() {
@@ -170,6 +179,11 @@ class HomeViewController: UIViewController {
             finalizedButton.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor, constant: -20),
             finalizedButton.widthAnchor.constraint(equalToConstant: 170),
             finalizedButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            stackView.topAnchor.constraint(equalTo: buttonsView.bottomAnchor, constant: 0),
+            stackView.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 0),
+            stackView.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: 0),
+            stackView.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: 0),
         ])
     }
     

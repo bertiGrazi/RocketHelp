@@ -30,7 +30,7 @@ class NoCallsCreatedView: UIView {
         label.text = "Você ainda não tem\nchamados criados"
         label.textColor = UIColor(red: 0.48, green: 0.48, blue: 0.54, alpha: 1)
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont(name: "Roboto", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,6 +46,8 @@ class NoCallsCreatedView: UIView {
     }
     
     fileprivate func setupView() {
+        noCallsCreatedLabel.numberOfLines = 0
+        
         addSubview(viewNoCallsCreated)
         viewNoCallsCreated.addSubview(noCallsCreatedIcon)
         viewNoCallsCreated.addSubview(noCallsCreatedLabel)
@@ -53,19 +55,20 @@ class NoCallsCreatedView: UIView {
     
     fileprivate func setupConstrains() {
         NSLayoutConstraint.activate([
-            viewNoCallsCreated.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            viewNoCallsCreated.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             viewNoCallsCreated.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             viewNoCallsCreated.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             viewNoCallsCreated.widthAnchor.constraint(equalToConstant: 300),
             viewNoCallsCreated.heightAnchor.constraint(equalToConstant: 300),
             
             noCallsCreatedIcon.centerXAnchor.constraint(equalTo: viewNoCallsCreated.centerXAnchor, constant: 0),
-            noCallsCreatedIcon.centerYAnchor.constraint(equalTo: viewNoCallsCreated.centerYAnchor, constant: 0),
-            noCallsCreatedIcon.topAnchor.constraint(equalTo: viewNoCallsCreated.topAnchor, constant: 20),
+            noCallsCreatedIcon.topAnchor.constraint(equalTo: viewNoCallsCreated.topAnchor, constant: 36),
+            viewNoCallsCreated.widthAnchor.constraint(equalToConstant: 80),
+            viewNoCallsCreated.heightAnchor.constraint(equalToConstant: 80),
             
-            noCallsCreatedLabel.centerXAnchor.constraint(equalTo: viewNoCallsCreated.centerXAnchor, constant: 0),
-            noCallsCreatedLabel.centerYAnchor.constraint(equalTo: viewNoCallsCreated.centerYAnchor, constant: 0),
-            noCallsCreatedLabel.topAnchor.constraint(equalTo: noCallsCreatedIcon.bottomAnchor, constant: 20),
+            noCallsCreatedLabel.topAnchor.constraint(equalTo: noCallsCreatedIcon.bottomAnchor, constant: 16),
+            noCallsCreatedLabel.leadingAnchor.constraint(equalTo: viewNoCallsCreated.leadingAnchor, constant: 20),
+            noCallsCreatedLabel.trailingAnchor.constraint(equalTo: viewNoCallsCreated.trailingAnchor, constant: -20),
         ])
     }
 }
