@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class HomeViewController: UIViewController {
     let noCallsCreatedView = NoCallsCreatedView()
@@ -14,7 +15,7 @@ class HomeViewController: UIViewController {
     fileprivate let scrollView: UIScrollView = {
       let scrollView = UIScrollView()
         scrollView.backgroundColor = UIColor(red: 0.125, green: 0.125, blue: 0.141, alpha: 1)
-        scrollView.isScrollEnabled = false
+        scrollView.isScrollEnabled = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
       return scrollView
     }()
@@ -183,12 +184,12 @@ class HomeViewController: UIViewController {
             buttonsView.heightAnchor.constraint(equalToConstant: 50),
             
             inProgressButton.topAnchor.constraint(equalTo: buttonsView.topAnchor, constant: 10),
-            inProgressButton.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor, constant: 20),
+            inProgressButton.leadingAnchor.constraint(equalTo: buttonsView.leadingAnchor, constant: UIScreen.main.bounds.width <= 375 ? 12 : 20),
             inProgressButton.widthAnchor.constraint(equalToConstant: 170),
             inProgressButton.heightAnchor.constraint(equalToConstant: 40),
             
             finalizedButton.topAnchor.constraint(equalTo: buttonsView.topAnchor, constant: 10),
-            finalizedButton.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor, constant: -20),
+            finalizedButton.trailingAnchor.constraint(equalTo: buttonsView.trailingAnchor, constant: UIScreen.main.bounds.width <= 375 ? -12 : -20),
             finalizedButton.widthAnchor.constraint(equalToConstant: 170),
             finalizedButton.heightAnchor.constraint(equalToConstant: 40),
             
@@ -199,7 +200,7 @@ class HomeViewController: UIViewController {
             newRequestButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 0),
             newRequestButton.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 20),
             newRequestButton.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: -20),
-            newRequestButton.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: -80),
+            newRequestButton.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: -10),
             newRequestButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
