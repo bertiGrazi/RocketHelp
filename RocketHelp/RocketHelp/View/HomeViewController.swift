@@ -116,6 +116,13 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    fileprivate let suportView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
@@ -144,6 +151,7 @@ class HomeViewController: UIViewController {
         viewContainerBody.addSubview(stackView)
         stackView.addArrangedSubview(noCallsCreatedView)
         viewContainerBody.addSubview(newRequestButton)
+        viewContainerBody.addSubview(suportView)
     }
     
     fileprivate func setupConstrains() {
@@ -202,6 +210,12 @@ class HomeViewController: UIViewController {
             newRequestButton.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: -20),
             newRequestButton.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: -10),
             newRequestButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            suportView.topAnchor.constraint(equalTo: newRequestButton.bottomAnchor, constant: 0),
+            suportView.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 0),
+            suportView.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: 0),
+            suportView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            suportView.heightAnchor.constraint(equalToConstant: 100),
         ])
     }
     
