@@ -100,7 +100,7 @@ class RequestsTableViewCell: UITableViewCell {
             cardView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             cardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             cardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 50),
+            cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 70),
             cardView.widthAnchor.constraint(equalToConstant: 380),
             cardView.heightAnchor.constraint(equalToConstant: 88),
             
@@ -110,18 +110,20 @@ class RequestsTableViewCell: UITableViewCell {
             cardLeftColorView.widthAnchor.constraint(equalToConstant: 10),
             cardLeftColorView.heightAnchor.constraint(equalToConstant: 88),
             
-            numberRequestLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 10),
+            numberRequestLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 20),
             numberRequestLabel.leadingAnchor.constraint(equalTo: cardLeftColorView.leadingAnchor, constant: 24),
             
             clockIcon.topAnchor.constraint(equalTo: numberRequestLabel.bottomAnchor, constant: 12),
             clockIcon.leadingAnchor.constraint(equalTo: cardLeftColorView.leadingAnchor, constant: 24),
+            clockIcon.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -24),
             clockIcon.widthAnchor.constraint(equalToConstant: 20),
             clockIcon.heightAnchor.constraint(equalToConstant: 20),
             
             dataRequestLabel.topAnchor.constraint(equalTo: numberRequestLabel.bottomAnchor, constant: 12),
             dataRequestLabel.leadingAnchor.constraint(equalTo: clockIcon.leadingAnchor, constant: 24),
+            dataRequestLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -24),
             
-            circleGrayView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
+            circleGrayView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 20),
             circleGrayView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -24),
             circleGrayView.widthAnchor.constraint(equalToConstant: 48),
             circleGrayView.heightAnchor.constraint(equalToConstant: 48),
