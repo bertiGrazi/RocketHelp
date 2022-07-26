@@ -9,7 +9,9 @@ import UIKit
 import Foundation
 
 class HomeViewController: UIViewController {
+    //MARK: - Variable
     let noCallsCreatedView = NoCallsCreatedView()
+    let viewModel = RequestViewModel()
     
     //MARK: - View
     fileprivate let scrollView: UIScrollView = {
@@ -123,9 +125,20 @@ class HomeViewController: UIViewController {
         return view
     }()
     
+    fileprivate let rquestTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 0.07, green: 0.07, blue: 0.078, alpha: 1)
+        
+        rquestTableView.register(RequestsTableViewCell.self, forCellReuseIdentifier: RequestsTableViewCell.identifier)
+        
+        rquestTableView.dataSource = self
         
         signOutButton.addTarget(self, action: #selector(goBackToLoginScream), for: .touchUpInside)
         
@@ -149,7 +162,8 @@ class HomeViewController: UIViewController {
         buttonsView.addSubview(inProgressButton)
         buttonsView.addSubview(finalizedButton)
         viewContainerBody.addSubview(stackView)
-        stackView.addArrangedSubview(noCallsCreatedView)
+//        stackView.addArrangedSubview(noCallsCreatedView)
+        stackView.addArrangedSubview(rquestTableView)
         viewContainerBody.addSubview(newRequestButton)
         viewContainerBody.addSubview(suportView)
     }
@@ -201,9 +215,10 @@ class HomeViewController: UIViewController {
             finalizedButton.widthAnchor.constraint(equalToConstant: 170),
             finalizedButton.heightAnchor.constraint(equalToConstant: 40),
             
-            stackView.topAnchor.constraint(equalTo: buttonsView.bottomAnchor, constant: 0),
+            stackView.topAnchor.constraint(equalTo: buttonsView.bottomAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 0),
             stackView.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: 0),
+            stackView.bottomAnchor.constraint(equalTo: viewContainerBody.bottomAnchor, constant: 0),
             
             newRequestButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 0),
             newRequestButton.leadingAnchor.constraint(equalTo: viewContainerBody.leadingAnchor, constant: 20),
@@ -226,5 +241,19 @@ class HomeViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: loginScream)
          navVC.modalPresentationStyle = .fullScreen
          present(navVC, animated: true)
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.fetchRequestList().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RequestsTableViewCell.identifier, for: indexPath) as? RequestsTableViewCell else { return UITableViewCell() }
+        
+        cell.configCell(data: viewModel.fetchRequestList()[indexPath.row])
+        return cell
     }
 }
