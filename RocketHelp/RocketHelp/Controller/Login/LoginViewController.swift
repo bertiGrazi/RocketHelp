@@ -141,7 +141,7 @@ class LoginViewController: UIViewController {
     
        let navVC = UINavigationController(rootViewController: homeScream)
         navVC.navigationBar.isHidden = true
-        navVC.hidesBarsOnSwipe = true
+        //navVC.hidesBarsOnSwipe = true
         
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)

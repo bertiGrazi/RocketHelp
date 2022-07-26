@@ -141,6 +141,7 @@ class HomeViewController: UIViewController {
         rquestTableView.dataSource = self
         
         signOutButton.addTarget(self, action: #selector(goBackToLoginScream), for: .touchUpInside)
+        newRequestButton.addTarget(self, action: #selector(goToNewRequest), for: .touchUpInside)
         
         setupView()
         setupConstrains()
@@ -232,6 +233,17 @@ class HomeViewController: UIViewController {
             suportView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             suportView.heightAnchor.constraint(equalToConstant: 100),
         ])
+    }
+    
+    @objc
+    func goToNewRequest() {
+        let newRequest = NewRequestViewController()
+        
+        let navVC = UINavigationController(rootViewController: newRequest)
+        navVC.modalPresentationStyle = .fullScreen
+        navVC.hidesBarsOnSwipe = true
+        navVC.navigationBar.prefersLargeTitles = false
+        present(navVC, animated: true)
     }
     
     @objc
