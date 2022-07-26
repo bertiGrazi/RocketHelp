@@ -11,7 +11,6 @@ class RequestBusinessModel: RequestProtocol {
     func fetchRequestList() -> [RequestDataSource] {
         [
             RequestDataSource(numberRequest: 147257),
-            RequestDataSource(numberRequest: 147257),
         ]
     }
 }
