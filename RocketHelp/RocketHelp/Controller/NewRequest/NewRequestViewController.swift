@@ -81,6 +81,8 @@ class NewRequestViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .done, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
         
+        registerButton.addTarget(self, action: #selector(goToDetailsRequest), for: .touchUpInside)
+        
         setupView()
         setupConstrains()
     }
@@ -126,6 +128,16 @@ class NewRequestViewController: UIViewController {
             registerButton.trailingAnchor.constraint(equalTo: viewContainerBody.trailingAnchor, constant: -20),
             registerButton.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+    
+    @objc
+    func goToDetailsRequest() {
+        let detailsRequest = DetailsRequestViewController()
+        let navVC = UINavigationController(rootViewController: detailsRequest)
+        navVC.modalPresentationStyle = .fullScreen
+        navVC.hidesBarsOnSwipe = true
+        navVC.navigationBar.prefersLargeTitles = false
+        present(navVC, animated: true)
     }
     
     @objc
