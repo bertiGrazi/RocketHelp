@@ -14,6 +14,7 @@
 		B138309E288F534700D716E3 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138309D288F534700D716E3 /* RequestProtocol.swift */; };
 		B13830A1288F54EC00D716E3 /* RequestBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13830A0288F54EC00D716E3 /* RequestBusinessModel.swift */; };
 		B13830A4288F558B00D716E3 /* RequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13830A3288F558B00D716E3 /* RequestViewModel.swift */; };
+		B1468C9F2891EE560086C3AE /* DetailsRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1468C9E2891EE560086C3AE /* DetailsRequestViewController.swift */; };
 		B18D1E982887780E008D08AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E972887780E008D08AD /* AppDelegate.swift */; };
 		B18D1E9A2887780E008D08AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E992887780E008D08AD /* SceneDelegate.swift */; };
 		B18D1E9C2887780E008D08AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D1E9B2887780E008D08AD /* LoginViewController.swift */; };
@@ -50,6 +51,7 @@
 		B138309D288F534700D716E3 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		B13830A0288F54EC00D716E3 /* RequestBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBusinessModel.swift; sourceTree = "<group>"; };
 		B13830A3288F558B00D716E3 /* RequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewModel.swift; sourceTree = "<group>"; };
+		B1468C9E2891EE560086C3AE /* DetailsRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRequestViewController.swift; sourceTree = "<group>"; };
 		B18D1E942887780E008D08AD /* RocketHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18D1E972887780E008D08AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18D1E992887780E008D08AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,12 +92,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B132103A2890558C00B554CB /* New Request */ = {
+		B132103A2890558C00B554CB /* NewRequest */ = {
 			isa = PBXGroup;
 			children = (
 				B132103B2890559E00B554CB /* NewRequestViewController.swift */,
 			);
-			path = "New Request";
+			path = NewRequest;
 			sourceTree = "<group>";
 		};
 		B1383093288F527C00D716E3 /* View */ = {
@@ -160,6 +162,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B1468C9D2891EE390086C3AE /* DetailsRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B1468C9E2891EE560086C3AE /* DetailsRequestViewController.swift */,
+			);
+			path = DetailsRequest;
+			sourceTree = "<group>";
+		};
 		B18D1E8B2887780E008D08AD = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +231,8 @@
 		B18D1EC828877B52008D08AD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B132103A2890558C00B554CB /* New Request */,
+				B1468C9D2891EE390086C3AE /* DetailsRequest */,
+				B132103A2890558C00B554CB /* NewRequest */,
 				B1383095288F529B00D716E3 /* Home */,
 				B1383094288F529300D716E3 /* Login */,
 			);
@@ -369,6 +380,7 @@
 				B132103C2890559E00B554CB /* NewRequestViewController.swift in Sources */,
 				B18D1E9A2887780E008D08AD /* SceneDelegate.swift in Sources */,
 				B18F40532888CC2E00D859D9 /* HomeViewController.swift in Sources */,
+				B1468C9F2891EE560086C3AE /* DetailsRequestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
